@@ -1,0 +1,272 @@
+body {
+    margin: 0;
+}
+input {
+    outline:none;
+}
+.loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
+.loader div {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('dollar.gif');
+}
+.converter_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+    font-family: 'Philosopher', sans-serif;
+    position: relative;
+    box-sizing: border-box;
+}
+.current_curse_container {
+    position: absolute;
+    width: 250px;
+    height: 30%;
+    right: 0%;
+    border: 1px solid #4B0082;
+    border-radius: 10px;
+}
+.current_curse {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.curse_usd, .curse_eur {
+    width: 90%;
+    height: 65%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.curse_usd {
+    border-right: 1px solid #4B0082;
+}
+.current_name {
+    font-size: 18px;
+}
+.current_value {
+    font-size: 26px;
+    margin: 5% 0;
+}
+.main_converter {
+    width: 930px;
+    position: relative;
+    margin: 0 auto;
+}
+.out_in {
+    display: flex;
+    justify-content: space-around;
+}
+.out_in_container {
+    display: flex;  /*  */
+    justify-content: space-between;
+    margin-top: 2%;
+}
+.out_container, .in_container {
+    width: 45%;   /*  */
+}
+
+.out_buttons, .in_buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.button_currency {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 2.5% 0;
+    background-color: white;
+    border: 1px solid #4B0082;
+    border-left: 0;
+    outline: none;
+    font-size: 1em;
+    font-family: 'Philosopher', sans-serif;
+    color: #6A5ACD;
+    text-align: center;
+    background-size: cover;
+    transition: all 0.6s ease;
+}
+
+.button_currency:first-child {
+    border-radius: 5px 0 0 5px;
+    border-left: 1px solid #4B0082;
+}
+.button_currency:last-child {
+    border-radius: 0 5px 5px 0;
+}
+.button_currency:active {
+    background-color: #6A5ACD;
+    color: white;
+    transition: all 0.6s ease;
+}
+.input_container {
+    border: 1px solid #4B0082;
+    margin-top: 7.5%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+.out_input_wrap, .in_input_wrap {
+    display: flex;
+}
+.out_input, .in_input {
+    width: 100%;
+    height: 60px;
+    border: 0;
+    font-size: 42px;
+    font-weight: bold;
+    margin: 5%;
+}
+.calendar_btn_container {
+    width: auto;
+    margin-top: 3.5%;
+}
+.calendar_btn {
+    width: 22%;
+    height: 40px;
+    border: 1px solid #4B0082;
+    border-radius: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #6A5ACD;
+}
+.currency_equally_container {
+    display: flex;
+    justify-content: center;
+}
+.currency_equally {
+    font-size: 1rem;
+    color: rgb(128, 128, 128);
+    width: 85%;
+    color: #6A5ACD;
+}
+.modal_container {
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.5);;
+    font-size: 18px;
+    background-color: white;
+    top: 33%;
+    z-index: 1;
+    
+}
+.modal_elem_wrapper {
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    padding: 5px 15.5px;
+    width: 279px;
+    cursor: pointer;
+    
+}
+
+.active {
+    background-color: #4B0082;
+    color: white;
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+@media (max-width: 940px) {
+    .modal_container {
+        width: 620px;
+        left: 50%;
+        margin-left: -310px;
+    }
+}
+@media (max-width: 768px) {
+    .out_in_container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main_converter {
+        width: 480px;  
+    }
+    .modal_container {
+        width: 480px;
+        left: 0%;
+        margin-left: 0px;
+        font-size: 14px;
+        top: 20%;
+    }
+    .modal_elem_wrapper {
+        float: none;
+        width: 450px;
+    }
+    .out_container, .in_container {
+        width: 100%;
+    }
+    .current_curse_container {
+        width: 45%;
+        height: 20%;
+    }
+    .calendar_btn {
+        width: 45%;
+    }
+    
+}
+@media (max-width: 480px) {
+    .modal_container {
+        width: 320px;
+        left: 50%;
+        margin-left: -160px;
+        top: 17%;
+    }
+    .modal_elem_wrapper {
+        width: 290px;
+    }
+    .button_currency {
+        font-size: 0.9rem;
+    }
+    .out_input, .in_input {
+        font-size: 34px;
+    }
+    .currency_equally {
+        font-size: 0.8rem;
+    }
+    .calendar_btn {
+        font-size: 0.9rem;
+    }
+    .curse_usd, .curse_eur {
+        font-size: 11px;
+    }
+    .current_name {
+        font-size: 14px;
+    }
+    .current_value {
+        font-size: 20px;
+    }
+    .current_curse_container {
+        height: 15%;
+        
+    }
+    .current_curse {
+        height: 15%;
+        top: 33px;
+    }
+}
