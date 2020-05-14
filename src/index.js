@@ -10,7 +10,6 @@ import reducer from './Reducers'
 import Converter from './Converter/Converter'
 
 const store = createStore(reducer, applyMiddleware(thunk))
-/* store.subscribe(() => console.log(store.getState()) ) */
 
 ReactDOM.render(
     <Provider store={store}>
